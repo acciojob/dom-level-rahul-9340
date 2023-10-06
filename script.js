@@ -1,18 +1,20 @@
 //your JS code here. If required.
 
-	let currentlevel = document.getEelementById("level")
-function levelfinder (currentlevel)
-	{
-		let currentnode = currentlevel.parentNode;
-		let level = 1;
-       while(currentnode.tagName !== "html")
-	   {
-		currentnode.parentNode.remove()
-		currentnode = currentnode.parentNode;
-		   level++;
-       }
-		alert(`The level of the element is:${level}`);
-     }
-
-levelfinder(currentlevel);
+document.addEventListener("DOMContentLoaded", () => {
+	  let levelElement = document.getElementById("level");
+	  console.log(levelElement);
+	  let level = 1;
+	
+	  while (true) {
+	    if (levelElement.tagName === "HTML") {
+	      break;
+	    }
+	    console.log(levelElement);
+	    levelElement = levelElement.parentNode;
+	    level++;
+	  }
+	
+	  alert(`The level of the element is: ${level}`);
+	});
+	
 
